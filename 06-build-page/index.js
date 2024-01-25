@@ -92,7 +92,7 @@ async function renderTemplate() {
 
         const placeholder = `{{${path.basename(file, '.html')}}}`;
         if (templateContent.includes(placeholder)) {
-          templateContent = templateContent.replace(
+          templateContent = templateContent.replaceAll(
             placeholder,
             componentContent,
           );

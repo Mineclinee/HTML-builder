@@ -8,8 +8,8 @@ const output = fs.createWriteStream(pathToText);
 console.log('Hey! Please, enter a text:');
 
 stdin.on('data', (chunk) => {
-  output.write(chunk);
   if (chunk.toString().includes('exit')) exit();
+  output.write(chunk);
 });
 
 process.on('SIGINT', () => {
